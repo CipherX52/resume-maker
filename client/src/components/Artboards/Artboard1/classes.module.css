@@ -1,5 +1,5 @@
 .container {
-    background-color: yellow;
+    background-color: white;
 }
 
 .container > div {
@@ -10,6 +10,7 @@
 .infoType {
     text-align: center;
     font-size: 2.5rem;
+    color: black;           
 }
 
 .profilePic {
