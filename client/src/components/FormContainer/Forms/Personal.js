@@ -92,14 +92,14 @@ const Personal = ({classes,  ...props}) => {
                 />
                 <label><i className="fas fa-mobile-alt"></i><span>Phone Number</span></label>
             </div>
-            <button className="submitButton" type="submit" onClick={() => props.onProgress({
+            <button  className={classes.nextButton} type="submit" onClick={() => props.onProgress({
                 image,
                 name,
                 dob,
                 gender,
                 email,
                 phone
-            })}><i className='fas fa-check'></i></button>
+            })}>Next</button>
         </form>
     )
 }

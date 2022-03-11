@@ -90,19 +90,31 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 
-button[type='submit'], .submitButton {
+#nextButton[type='submit'], .submitButton {
     margin-top: .5em;
-    font-size: 3em;
+    font-size: 1.5em;
     color: white;
     background-color: #058f1c;
     border: none;
-    height: 2em;
-    width: 2em;
-    border-radius: 1.25em;
+    height: 1.5em;
+    width: 4em;
+    border-radius: 1em;
     outline: none;
     cursor: pointer;
 }
 
+.nextButton{
+    margin-top: .5em;
+    font-size: 1.5em;
+    color: white;
+    background-color: #058f1c;
+    border: none;
+    height: 1.5em;
+    width: 4em;
+    border-radius: 1em;
+    outline: none;
+    cursor: pointer;
+}
 
 .formSlide h1 {
     text-transform: capitalize;

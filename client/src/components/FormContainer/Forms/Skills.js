@@ -45,11 +45,11 @@ const Skills = ({classes,  ...props}) => {
                 )
             }
 
-            <button 
+            <button id="nextButton"
                 type="button"
                 className={classes.submitButton}
                 onClick={() => props.onProgress(skillsData)}
-            ><i className='fas fa-check'></i></button>
+            >Next</button>
         </form>
     );
 }

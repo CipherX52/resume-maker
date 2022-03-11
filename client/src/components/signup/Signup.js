@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from "react-router-dom";
 import {useState,useEffect} from "react";
-// import "./Signup.css"
+import "./Signup.css"
 
 function Signup() {
 //   initial values
@@ -68,22 +68,22 @@ const validate = (values)=>{
 
     
     return (
-        
+            <div className='signupBody'>
                 <div className="signup">
                 
                     <h1>Signin</h1>
                         <form action="" method="" onSubmit={submitForm}>
-                            <input type="text" name="username" placeholder="UserName" value={formValues.username} 
+                            <input className='inputs' type="text" name="username" placeholder="UserName" value={formValues.username} 
                             onChange={changeHandler}
                             />
                             <p>{formErrors.username}</p>
 
-                            <input type="email" name="email" placeholder="Email" value={formValues.email} 
+                            <input className='inputs' type="email" name="email" placeholder="Email" value={formValues.email} 
                             onChange={changeHandler}
                             />
                             <p>{formErrors.email}</p>
 
-                            <input type="password" name="password" placeholder="Password" value={formValues.password}
+                            <input className='inputs' type="password" name="password" placeholder="Password" value={formValues.password}
                             onChange={changeHandler}
                             />
                             <p>{formErrors.password}</p>
@@ -93,6 +93,7 @@ const validate = (values)=>{
                             </form>
                         
                 </div>
+            </div>
             
     
     )
