@@ -59,6 +59,14 @@ input[type='radio'] {
     background-color: blueviolet;
 }
 
+#checkbox{
+    height: 30px;
+    width: 30px;
+    margin: .2em;
+    background-color: blueviolet;
+}
+
+
 
 
 

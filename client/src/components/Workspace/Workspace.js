@@ -9,7 +9,7 @@ import classes from './Workspace.module.css';
 class Workspace extends Component {
 
     state = {
-        zoom: 100,
+        zoom: 60,
     }
 
 
