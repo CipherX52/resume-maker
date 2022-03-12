@@ -31,7 +31,7 @@ const Artboard1 = props => {
             </div>
             <div className={classes.education}>
                 <h2 className={classes.infoType} >Educational</h2>
-                <p>{props.education?.degree} - {props.education?.university}<span style={{float: 'right'}}>{props.education?.startDate} to {props.education?.endDate}</span></p>
+                <p>{props.education?.degree} - {props.education?.university}<span className={classes.dateColor} style={{float: 'right'}}>{props.education?.startDate} to {props.education?.endDate}</span></p>
                 <p></p>
             </div>
             <div className={classes.projects} >

@@ -2,7 +2,7 @@
     flex-grow: 1;
     background-color: var(--workspace-background-color);
     color: white;
-    padding: 2em;
+    padding: 3em;
     position: relative;
 }
 
