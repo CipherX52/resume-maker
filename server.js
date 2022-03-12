@@ -8,6 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/api/auth", require("./routes/auth"));
+// app.use("/api/user", require("./routes/userRoutes"));
+// app.use("/api/admin", require("./routes/adminRoutes"));
 
 const mongoose = require('mongoose');
 

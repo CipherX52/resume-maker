@@ -1,4 +1,3 @@
-//create a userschema with username, email, password
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
