@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from "react-router-dom";
 import {useState,useEffect} from "react";
-// import "./Login.css";
+import "./Login.css";
 
 function Login() {
 //   initial values
@@ -70,12 +70,12 @@ const validate = (values)=>{
                 
                     <h1>Login</h1>
                         <form action = "" method="" onSubmit={submitForm}>
-                            <input type="email" name="email" placeholder="Email" value={formValues.email} 
+                            <input className='inputs' type="email" name="email" placeholder="Email" value={formValues.email} 
                             //  onChange={(e)=>setEmail(e.target.value)}
                             onChange={changeHandler}
                             />
                             <p>{formErrors.email}</p>
-                            <input type="password" name="password" placeholder="Password" value={formValues.password}
+                            <input className='inputs' type="password" name="password" placeholder="Password" value={formValues.password}
                             //  onChange={(e)=>setPassword(e.target.value)}
                             onChange={changeHandler}
                             />

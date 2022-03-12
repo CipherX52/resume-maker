@@ -65,13 +65,13 @@ const Projects = ({classes,  ...props}) => {
                 )
             }
             <div>
-                <button type="submit" style={{
+                <button className="nextButton" type="submit" style={{
                     marginRight: '2em',
                     backgroundColor: 'orange'
                     }}
                     onClick={addProject}
                     ><i className='fas fa-plus'></i></button>
-                <button  type="submit" onClick={() => props.onProgress(projectData)}><i className='fas fa-check'></i></button>
+                <button className={classes.nextButton} type="submit" onClick={() => props.onProgress(projectData)}>Next</button>
             </div>
         </form>
     )

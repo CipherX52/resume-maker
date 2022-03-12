@@ -46,12 +46,12 @@ const Education = ({classes,  ...props}) => {
                 />
                 <label><i className="fas fa-calendar-alt"></i><span>End</span></label>
             </div>
-            <button type="submit" onClick={() => props.onProgress({
+            <button className={classes.nextButton} type="submit" onClick={() => props.onProgress({
                 university,
                 degree,
                 startDate,
                 endDate
-            })}><i className='fas fa-check'></i></button>
+            })}>Next</button>
         </form>
     )
 }
