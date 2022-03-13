@@ -78,6 +78,8 @@ const validate = (values)=>{
 
     
     return (
+        <div className='container'>
+           <div className='boxcontainer2'>
         
         <div className="login">
         
@@ -94,6 +96,10 @@ const validate = (values)=>{
                     <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
                 </form>
         </div>
+             <img className="imgclass2" src="https://media.istockphoto.com/vectors/forgot-password-and-account-login-for-web-page-protection-security-vector-id1349915365?b=1&k=20&m=1349915365&s=170667a&w=0&h=Y85tQUwa1FfTQEmBjmwgZ-syWYQvDox9LuSxN93vWLw="/>
+   </div>
+ </div>
+           
             
     )
 }
