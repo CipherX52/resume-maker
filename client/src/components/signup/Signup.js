@@ -30,7 +30,7 @@ const submitForm = async (e)=>{
     e.preventDefault();
     setFormErrors(validate(formValues));
     try {
-        const response = await fetch("/api/auth/register", {
+        const response = await fetch("/api/user/register", {
             method: 'post',
             body: JSON.stringify({ username:formValues.username, email:formValues.email, password:formValues.password }),
             headers: {
