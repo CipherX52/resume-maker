@@ -1,11 +1,12 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useState,useEffect} from "react";
 import "./Signup.css"
 
 function Signup() {
 //   initial values
   const initialvalues = {email:"", password:"" , username:""}
+  const navigate = useNavigate();
 
 // creating state and passing initialvalues.
 const [formValues,setFormValues] =useState(initialvalues)
@@ -21,7 +22,7 @@ const[isSubmit,setIsSubmit] = useState(false)
 const changeHandler = (e)=>{
     const { name, value }= e.target;
     setFormValues({...formValues,[name]:value});
-    console.log(formValues)
+    // console.log(formValues)
 };
  
 // submitForm function
@@ -31,12 +32,13 @@ const submitForm = async (e)=>{
     try {
         const response = await fetch("/api/auth/register", {
             method: 'post',
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify({ username:formValues.username, email:formValues.email, password:formValues.password }),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
         const data = await response.json();
+        console.log(data);
         localStorage.setItem("authToken", data.token);
         if (data.success){
             navigate("/", { replace: false })

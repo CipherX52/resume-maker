@@ -6,6 +6,7 @@ import SignUp from "./components/signup/Signup";
 import Login from "./components/login/Login";
 import About from "./components/about/About";
 import FormPage from "./components/form/FormPage";
+import Admin from "./components/admin/Admin";
 import Error from "./components/error/Error";
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/form" element={<FormPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </>

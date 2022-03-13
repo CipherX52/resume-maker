@@ -38,7 +38,7 @@ const submitForm = async (e)=>{
     const data = await response.json();
     localStorage.setItem("authToken", data.token);
     if (data.success){
-        navigate("/", { replace: true })
+        navigate("/form", { replace: true })
     }
     else{throw(data.message)}
     setIsSubmit(true);

@@ -1,6 +1,6 @@
 .workspace {
     flex-grow: 1;
-    background-color: var(--workspace-background-color);
+    background-color: #f8f8f8;
     color: white;
     padding: 3em;
     position: relative;
