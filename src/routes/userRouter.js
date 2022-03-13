@@ -34,19 +34,19 @@ userRouter.post('/register',async(req,res)=>{
                         role:'user'            
                     })
                     const result=await newUser.save() 
-                    res.status(200).json(result)
+                    res.status(200).json({success:true, result})
                 }
                 else{
-                    res.status(406).json({message:"username already exists or email exists"})
+                    res.status(406).json({success:false, message:"username already exists or email exists"})
                 }
             }
             else{
-                res.status(401).json({message:"check password or email validation"})
+                res.status(401).json({success:false, message:"check password or email validation"})
             }
             
         } catch (error) {
             console.log(error)
-           res.status(500).json({message:"internel server error"}) 
+           res.status(500).json({success:false, message:"internel server error"}) 
         }
     }
 })
@@ -64,18 +64,18 @@ userRouter.post('/login',async(req,res)=>{
                 user:login.role,
                 message:'Login Successful'
             }
-            res.status(200).json(data,)   
+            res.status(200).json({success:true, data})
         }
         else{
-            res.status(401).json({message:"password mismatch"})
+            res.status(401).json({success:false, message:"password mismatch"})
         }
          }
          else{
-             res.status(404).json({message:"no user found"})
+             res.status(404).json({success:false, message:"no user found"})
          }
     }
     else{
-        res.status(406).json({message:"not acceptable"})
+        res.status(406).json({success:false, message:"not acceptable"})
     }
 })
 

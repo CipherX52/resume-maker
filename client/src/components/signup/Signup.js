@@ -25,9 +25,26 @@ const changeHandler = (e)=>{
 };
  
 // submitForm function
-const submitForm = (e)=>{
+const submitForm = async (e)=>{
     e.preventDefault();
     setFormErrors(validate(formValues));
+    try {
+        const response = await fetch("/api/auth/register", {
+            method: 'post',
+            body: JSON.stringify({ username, email, password }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await response.json();
+        localStorage.setItem("authToken", data.token);
+        if (data.success){
+            navigate("/", { replace: false })
+        }
+        else{throw(data.message)}
+    } catch (error) {
+        console.log(error)
+    }
     setIsSubmit(true);
   };
 
@@ -71,8 +88,8 @@ const validate = (values)=>{
             <div className='signupBody'>
                 <div className="signup">
                 
-                    <h1>Signin</h1>
-                        <form action="" method="" onSubmit={submitForm}>
+                    <h1>SignUp</h1>
+                        <form onSubmit={submitForm}>
                             <input className='inputs' type="text" name="username" placeholder="UserName" value={formValues.username} 
                             onChange={changeHandler}
                             />

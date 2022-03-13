@@ -36,12 +36,11 @@ const submitForm = async (e)=>{
         }
     })
     const data = await response.json();
-    console.log(data);
     localStorage.setItem("authToken", data.token);
     if (data.success){
-        console.log(data.success);
         navigate("/", { replace: true })
     }
+    else{throw(data.message)}
     setIsSubmit(true);
   };
 
@@ -49,7 +48,7 @@ const submitForm = async (e)=>{
 // useEffect for checking the validation criteria.
 useEffect(()=>{
     if(Object.keys(formErrors).length === 0 && isSubmit){
-        // consnpm iole.log(formValues)
+        console.log(formValues)
     }
 },[formErrors])
 
