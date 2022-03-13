@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from "react-router-dom";
 import {useState,useEffect} from "react";
-import "./Signup.css"
+// import "./Signup.css"
 
 function Signup() {
 //   initial values
