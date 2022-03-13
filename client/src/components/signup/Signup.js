@@ -87,7 +87,9 @@ const validate = (values)=>{
 
     
     return (
-            <div className='signupBody'>
+        <div className='container'>
+            <div className='boxcontainer1'>
+           
                 <div className="signup">
                 
                     <h1>SignUp</h1>
@@ -110,11 +112,10 @@ const validate = (values)=>{
                                 <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
                             {/* </Link> */}
                             </form>
-                        
-                </div>
+                        </div>
+                        <img  className="imgclass1" src="https://media.istockphoto.com/vectors/woman-with-laptop-sitting-in-nature-and-leaves-concept-illustration-vector-id1139913278?k=20&m=1139913278&s=612x612&w=0&h=Ue0Nh74fYCnNd5hfwBCLwJ2VeZqjXxnI5iEXqqTLXb8="/>
             </div>
-            
-    
+            </div>
     )
 }
 
