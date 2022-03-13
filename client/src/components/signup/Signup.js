@@ -41,7 +41,7 @@ const submitForm = async (e)=>{
         console.log(data);
         localStorage.setItem("authToken", data.token);
         if (data.success){
-            navigate("/", { replace: false })
+            navigate("/about", { replace: false })
         }
         else{throw(data.message)}
     } catch (error) {
@@ -55,7 +55,7 @@ const submitForm = async (e)=>{
 useEffect(()=>{
     console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
-        console.log(formValues)
+        // console.log(formValues)
     }
 },[formErrors])
 

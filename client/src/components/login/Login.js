@@ -38,7 +38,7 @@ const submitForm = async (e)=>{
     const data = await response.json();
     localStorage.setItem("authToken", data.token);
     if (data.success){
-        navigate("/form", { replace: true })
+        (data.role==="admin")?navigate("/admin", { replace: true }):navigate("/form", { replace: true })
     }
     else{throw(data.message)}
     setIsSubmit(true);

@@ -23,14 +23,18 @@ export default function About() {
                                 
                         <p><span>Approved templates, </span>Professionally-designed resumes.</p>
                         <h2>User-friendly. Professional. Effective. Try our resume builder today!!!</h2>
-                        <img className="imgclass3" src="https://media.istockphoto.com/vectors/flat-design-concept-of-our-team-about-us-community-management-vector-id1166406650?k=20&m=1166406650&s=612x612&w=0&h=Ynf0CRHBwMdXgcaXOKlSL1mPeZLQL7we-XJJK-scczk="/>
               {/* <Link to="/back">
                 <button></button>
               </Link> */}
+              {/* <img className="imgclass3" src="https://media.istockphoto.com/vectors/flat-design-concept-of-our-team-about-us-community-management-vector-id1166406650?k=20&m=1166406650&s=612x612&w=0&h=Ynf0CRHBwMdXgcaXOKlSL1mPeZLQL7we-XJJK-scczk="/> */}
             </div>
+            
         </div>
-   </div> 
+        
+   </div>
+    
  </div>
+ 
 </div>
 
 
