@@ -1,17 +1,18 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import {useState,useEffect} from "react";
 import "./Login.css";
 
 function Login() {
-//   initial values
-  const initialvalues = {email:"", password:""}
+//initial values
+const initialvalues = {email:"", password:""}
 
+const navigate = useNavigate();
 // creating state and passing initialvalues.
-const [formValues,setFormValues] =useState(initialvalues)
+const [formValues,setFormValues] = useState(initialvalues)
 
 // creating states for errors with imitial value as empty objects.
-const [formErrors,setFormErrors] =useState({})
+const [formErrors,setFormErrors] = useState({})
 
 // creating states for flags
 const[isSubmit,setIsSubmit] = useState(false)
@@ -21,22 +22,34 @@ const[isSubmit,setIsSubmit] = useState(false)
 const changeHandler = (e)=>{
     const { name, value }= e.target;
     setFormValues({...formValues,[name]:value});
-    console.log(formValues)
 };
  
 // submitForm function
-const submitForm = (e)=>{
+const submitForm = async (e)=>{
     e.preventDefault();
     setFormErrors(validate(formValues));
+    const response = await fetch("/api/user/login", {
+        method: 'post',
+        body: JSON.stringify({email:formValues.email, password:formValues.password}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json();
+    console.log(data);
+    localStorage.setItem("authToken", data.token);
+    if (data.success){
+        console.log(data.success);
+        navigate("/", { replace: true })
+    }
     setIsSubmit(true);
   };
 
 
 // useEffect for checking the validation criteria.
 useEffect(()=>{
-    console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
-        console.log(formValues)
+        // consnpm iole.log(formValues)
     }
 },[formErrors])
 
@@ -66,25 +79,22 @@ const validate = (values)=>{
     
     return (
         
-                <div className="login">
-                
-                    <h1>Login</h1>
-                        <form action = "" method="" onSubmit={submitForm}>
-                            <input className='inputs' type="email" name="email" placeholder="Email" value={formValues.email} 
-                            //  onChange={(e)=>setEmail(e.target.value)}
-                            onChange={changeHandler}
-                            />
-                            <p>{formErrors.email}</p>
-                            <input className='inputs' type="password" name="password" placeholder="Password" value={formValues.password}
-                            //  onChange={(e)=>setPassword(e.target.value)}
-                            onChange={changeHandler}
-                            />
-                            <p>{formErrors.password}</p>
-                            <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
-                            </form>
-                </div>
+        <div className="login">
+        
+            <h1>Login</h1>
+                <form onSubmit={submitForm}>
+                    <input className='inputs' type="email" name="email" placeholder="Email" value={formValues.email}
+                    onChange={changeHandler}
+                    />
+                    <p>{formErrors.email}</p>
+                    <input className='inputs' type="password" name="password" placeholder="Password" value={formValues.password}
+                    onChange={changeHandler}
+                    />
+                    <p>{formErrors.password}</p>
+                    <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
+                </form>
+        </div>
             
-    
     )
 }
 

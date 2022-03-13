@@ -1,27 +1,29 @@
-require('dotenv').config({path:"./config.env"});
-const express = require('express');
-const bodyParser = require('body-parser');
+require('dotenv').config({path:'./config.env'})
+var express=require('express')
 const path = require('path');
+const connection=require('./src/utils/connection')
+const userRouter=require('./src/routes/userRouter')
+const resumeRouter=require('./src/routes/resumeRoute')
+const adminRoute = require('./src/routes/adminRoute');
+const cors=require('cors')
+const fileUpload=require('express-fileupload');
 
 const app = express();
 
-app.use(express.json());
-app.use(bodyParser.json());
-app.use("/api/auth", require("./routes/auth"));
-// app.use("/api/user", require("./routes/userRoutes"));
-// app.use("/api/admin", require("./routes/adminRoutes"));
+//middlewares
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use('/public',express.static('public'))
+app.use(cors())
+app.use(fileUpload())
 
-const mongoose = require('mongoose');
+//routers
+app.use('/api/user',userRouter)
+app.use('/api/resume',resumeRouter)
+app.use('/api/admin',adminRoute)
 
-const connectDB = async() => {
-    await mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,
-        useUnifiedTopology:true
-    });
-
-    console.log("MongoDB connected");
-}
-
-connectDB();
+//db connection
+connection()
 
 //after frontend production build is built, uncomment the 4 lines below
 // app.use(express.static(path.resolve(__dirname, "./client/build")));
@@ -29,7 +31,7 @@ connectDB();
 //     response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 //   });
 
-const PORT = process.env.PORT || 5000;
+const PORT=process.env.PORT||8080
 
 const server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
