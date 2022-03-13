@@ -2304,7 +2304,7 @@ input, select, textarea {
 		opacity: 0;
 		width: 1em;
 		z-index: -1;
-	}
+	}	
 
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
@@ -2331,7 +2331,7 @@ input, select, textarea {
 				text-transform: none !important;
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
-			}
+			} 
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
@@ -2367,7 +2367,7 @@ input, select, textarea {
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
-	}
+	} */
 
 	::-webkit-input-placeholder {
 		color: rgba(255, 255, 255, 0.5) !important;

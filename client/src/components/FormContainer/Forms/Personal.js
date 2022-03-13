@@ -57,14 +57,12 @@ const Personal = ({classes,  ...props}) => {
                 }}>
                     Male <input 
                         type="radio" 
-                        id="checkbox"
                         name='gender' 
                         checked={gender === 'male'}
                         onChange={() => setGender('male')}
                     />
                     Female <input 
                         type="radio"
-                        id="checkbox"
                         name='gender'
                         checked={gender === 'female'}
                         onChange={() => setGender('female')}

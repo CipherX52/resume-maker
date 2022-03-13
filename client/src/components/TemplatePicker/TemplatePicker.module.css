@@ -6,12 +6,13 @@
     align-items: center;
 }
 .templatePicker h1 {
+    color: black;
     font-size: 3rem;
     margin: 2rem;
 }
 
 .templatePicker .list {
-    background-color: #252525;
+    background-color: gainsboro;
     border-radius: 2rem;
     width: 90%;
     flex-grow: 1;
