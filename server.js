@@ -26,10 +26,10 @@ app.use('/api/admin',adminRoute)
 connection()
 
 //after frontend production build is built, uncomment the 4 lines below
-// app.use(express.static(path.resolve(__dirname, "./client/build")));
-// app.get("*", function (request, response) {
-//     response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-//   });
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.get("*", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 const PORT=process.env.PORT||8080
 
