@@ -33,8 +33,10 @@ userRouter.post('/register',async(req,res)=>{
                         password:hashPassword,
                         role:'user'            
                     })
-                    const result=await newUser.save() 
-                    res.status(200).json({success:true, result})
+                    const login = await newUser.save()
+                    let token=generateToken(login.username,login.role)
+                    const data = { token:token, user:login.role }
+                    res.status(200).json({success:true, data})
                 }
                 else{
                     res.status(406).json({success:false, message:"username already exists or email exists"})
@@ -61,8 +63,7 @@ userRouter.post('/login',async(req,res)=>{
             let token=generateToken(login.username,login.role)
             const data={
                 token:token,
-                user:login.role,
-                message:'Login Successful'
+                user:login.role
             }
             res.status(200).json({success:true, data})
         }

@@ -19,7 +19,6 @@ export default function HearderComponent() {
   };
   const handleDrawerClose = () => {
     setMobileOpen(false);
-    console.log("prem se bolo Jai siya ram");
   };
   return (
     <Fragment>

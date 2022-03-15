@@ -11,7 +11,7 @@
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; } 
+html { width: 100%; height:100%; } 
 
  body { 
   width: 100%;
@@ -56,6 +56,7 @@ input {
   -ms-transition: box-shadow .5s ease;
   transition: box-shadow .5s ease;
 }
+
 input:focus { box-shadow: 1px 1px 40px #e2e6ed inset  } 
 
 .boxcontainer1{
@@ -67,14 +68,12 @@ input:focus { box-shadow: 1px 1px 40px #e2e6ed inset  }
   background: #fff;
   border-radius: 20px;
   left: 10%;
-  
 }
 
 .imgclass1{
   position:absolute;
   width: 50%;
-height: auto;
-right: 5%;
-top:10%;
-
+  height: auto;
+  right: 5%;
+  top:10%;
 }

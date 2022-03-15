@@ -35,10 +35,12 @@ const submitForm = async (e)=>{
             'Content-Type': 'application/json'
         }
     })
-    const data = await response.json();
-    localStorage.setItem("authToken", data.token);
-    if (data.success){
-        (data.role==="admin")?navigate("/admin", { replace: true }):navigate("/form", { replace: true })
+    const result = await response.json();
+    const data = result.data;
+    localStorage.setItem("user", data.user);
+    localStorage.setItem("authToken", data.user);
+    if (result.success){
+        (data.user==="admin")?navigate("/admin", { replace: true }):navigate("/form", { replace: true });
     }
     else{throw(data.message)}
     setIsSubmit(true);

@@ -22,7 +22,6 @@ const[isSubmit,setIsSubmit] = useState(false)
 const changeHandler = (e)=>{
     const { name, value }= e.target;
     setFormValues({...formValues,[name]:value});
-    // console.log(formValues)
 };
  
 // submitForm function
@@ -37,14 +36,18 @@ const submitForm = async (e)=>{
                 'Content-Type': 'application/json'
             }
         })
-        const data = await response.json();
+        const result = await response.json();
+        const data = result.data;
+        console.log(result);
         console.log(data);
         localStorage.setItem("authToken", data.token);
-        if (data.success){
-            navigate("/about", { replace: false })
+        localStorage.setItem("user", data.user);
+        if (result.success){
+            navigate("/form", { replace: false })
         }
-        else{throw(data.message)}
-    } catch (error) {
+        else{throw(data.message)}}
+        
+    catch (error) {
         console.log(error)
     }
     setIsSubmit(true);
@@ -53,7 +56,7 @@ const submitForm = async (e)=>{
 
 // useEffect for checking the validation criteria.
 useEffect(()=>{
-    console.log(formErrors)
+    // console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
         // console.log(formValues)
     }

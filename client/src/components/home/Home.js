@@ -104,7 +104,7 @@ function Home(props) {
                         <li><Link to="#" class="icon solid fa-envelope"><span class="label">Email</span></Link></li>
                     </ul>
                     <ul className="copyright">
-                        <li>Ictk</li>
+                        <li>ICTAK</li>
                     </ul>
                 </footer>
 
