@@ -60,8 +60,6 @@ input[type='radio'] {
 }
 
 
-
-
 .formItem input:focus + label,
 .formItem input:valid + label,
 .formItem textarea:focus + label,
