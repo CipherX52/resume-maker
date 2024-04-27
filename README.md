@@ -5,3 +5,6 @@ Resume Maker web application built as the final project of the ICTAK MERN FSD Co
 Frontend built using React, backend using Express and Node with a MongoDB database.
 
 Hosted on heroku [here](https://resume-maker1.herokuapp.com/).
+
+
+RIP Heroku - doesn't support free apps like before :(
